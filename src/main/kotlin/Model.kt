@@ -6,3 +6,16 @@ val accounts = listOf<Account>(
     Account("Fornondo Mentelongo","img2.jpeg"),
     Account("Pabio Raton","img3.jpeg")
 )
+
+data class Publicaciones(val name: String,val image: String,val publicacion: String,val descripcion :String)
+
+
+val publicaciones = listOf<Publicaciones>(
+    Publicaciones("Unay Porez","img1.jpeg","publicacion1.jpeg","Sun & Beach"),
+    Publicaciones("Fornondo Mentelongo","img2.jpeg","publicacion2.jpeg","In the Dark"),
+    Publicaciones("Pabio Raton","img3.jpeg","publicacion3.jpeg","..."),
+    Publicaciones("Fornondo Mentelongo","img2.jpeg","publicacion2.jpeg","..."),
+    Publicaciones("Pabio Raton","img3.jpeg","publicacion3.jpeg","..."),
+    Publicaciones("Fornondo Mentelongo","img2.jpeg","publicacion2.jpeg","...")
+
+)
