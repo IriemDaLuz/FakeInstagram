@@ -1,8 +1,13 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
@@ -49,13 +54,22 @@ fun App() {
             //Sugerencias
             Column {
                 Text("Sugerencias")//Titulo de la seccion
-                Text("")//Sugerencias-Personas
+                Text("Personas")//Sugerencias-Personas
                 Box {
                     //Cada Row es una Persona
-                    Row {
-                        Image()
-                        Text("")
+                    accounts.forEach { account ->
+                        Row(modifier = Modifier.padding(10.dp)) {
+                            Image(
+                                modifier = Modifier.clip(CircleShape),
+                                painter = painterResource(resourcePath = (account.image)),
+                                contentDescription = "Foto"
+                            )
+                            Column(modifier = Modifier.padding(start = 10.dp)) {
+                                Text(account.name)
+                            }
+                        }
                     }
+
                 }
                 Text("")//Sugerencias-Fotos
                 Box {
