@@ -1,8 +1,6 @@
 # FakeInstagram
-# -----------------
 
 ## App Asignatura Desarrollo Interfaces
-## ------------------------------------
 
 #### Según el ejemplo que vimos en clase, hacer una interfaz siguiendo el layout del profe
 
