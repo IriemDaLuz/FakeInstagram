@@ -6,7 +6,6 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
@@ -30,9 +29,8 @@ fun App() {
         Divider()
         //Cuerpo de la app
         Row { //Publicaciones
-            //Publicacion1
             Column {
-                Text("Publicaciones")//Titulo de la
+                Text("Publicaciones")//Titulo de la seccion
                 publicaciones.forEach { publicacion ->
                     Image(
                         painter = painterResource(resourcePath = (publicacion.publicacion)),
@@ -71,18 +69,18 @@ fun App() {
                 }
                 Text("Sugerencias")//Sugerencias-Fotos
                 Box {
-                    publicaciones.forEach { publicacion ->
+                    sugPublicacion.forEach { publicacion ->
                         Row(modifier = Modifier.padding(10.dp)) {
                             Image(
-                                painter = painterResource(resourcePath = (publicacion.publicacion)),
+                                painter = painterResource(resourcePath = (publicacion.image)),
                                 contentDescription = "Foto"
                             )
                         }
                     }
-                    publicaciones.forEach { publicacion ->
+                    sugPublicacion.forEach { publicacion ->
                         Row(modifier = Modifier.padding(10.dp)) {
                             Image(
-                                painter = painterResource(resourcePath = (publicacion.publicacion)),
+                                painter = painterResource(resourcePath = (publicacion.image)),
                                 contentDescription = "Foto"
                             )
                         }

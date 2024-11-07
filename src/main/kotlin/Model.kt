@@ -7,7 +7,7 @@ val accounts = listOf<Account>(
 )
 
 data class sugPublicaciones(val image: String)
-val sugPublicaciones = listOf<sugPublicaciones>(
+val sugPublicacion = listOf<sugPublicaciones>(
     sugPublicaciones("publicacion1.jpeg"),
     sugPublicaciones("publicacion2.jpeg"),
     sugPublicaciones("publicacion3.jpeg"),
