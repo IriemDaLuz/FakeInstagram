@@ -1,31 +1,45 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import androidx.compose.ui.window.rememberWindowState
 
-@Composable
 @Preview
+@Composable
 fun App() {
-    var text by remember { mutableStateOf("Hello, World!") }
-
-    MaterialTheme {
-        Button(onClick = {
-            text = "Hello, Desktop!"
-        }) {
-            Text(text)
+    Column {
+        Text("FakeInstagram")
+        Divider()
+        //Historias
+        Column {
+            Text("Historias")
+            Column {
+                Row { }//Fotos
+                Row { }//Nombre
+            }
         }
-    }
-}
+        Divider()
+        //Cuerpo de la app
+        Row {
+            Column {
+
+            }//Publicaciones
+            Column {  }//Sugerencias
+        }
+
+    } //Column cierre llave
+} //Cierre llave App
 
 fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
+    Window(
+        onCloseRequest = ::exitApplication,
+        title = "FakeInstagram",
+        state = rememberWindowState(width = 425.dp, height = 300.dp)
+    ) {
         App()
     }
 }
