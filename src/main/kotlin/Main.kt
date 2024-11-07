@@ -21,9 +21,16 @@ fun App() {
         //Historias
         Column {
             Text("Historias")
-            Column {
-                Row { }//Fotos
-                Row { }//Nombre
+            accounts.forEach { account ->
+                Column(modifier = Modifier.padding(10.dp)) {
+                    Image(
+                        modifier = Modifier.clip(CircleShape),
+                        painter = painterResource(resourcePath = (account.image)),
+                        contentDescription = "Foto"
+                    )
+                    Text(account.name)
+
+                }
             }
         }
         Divider()
