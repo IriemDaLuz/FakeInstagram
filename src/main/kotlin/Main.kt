@@ -32,23 +32,21 @@ fun App() {
         Row { //Publicaciones
             //Publicacion1
             Column {
-                Text("Publicaciones")//Titulo de la seccion
-                Image()//Foto de la publicacion
-                Row {
-                    Image()//Foto autor
-                    Text()//Nombre autor
+                Text("Publicaciones")//Titulo de la
+                publicaciones.forEach { publicacion ->
+                    Image(
+                        painter = painterResource(resourcePath = (publicacion.publicacion)),
+                        contentDescription = "Foto"
+                    )
+                    Row(modifier = Modifier.padding(10.dp)) {
+                        Image(
+                            painter = painterResource(resourcePath = (publicacion.image)),
+                            contentDescription = "Foto"
+                        )
+                        Text(publicacion.name)
+                    }
+                    Text(publicacion.descripcion)
                 }
-                Text()//Descripción
-            }
-            //Publicacion2
-            Column {
-                Text("Publicaciones")//Titulo de la seccion
-                Image()//Foto de la publicacion
-                Row {
-                    Image()//Foto autor
-                    Text("")//Nombre autor
-                }
-                Text("")//Descripción
             }
 
             //Sugerencias
@@ -76,8 +74,7 @@ fun App() {
                     publicaciones.forEach { publicacion ->
                         Row(modifier = Modifier.padding(10.dp)) {
                             Image(
-                                modifier = Modifier.clip(CircleShape),
-                                painter = painterResource(resourcePath = (publicacion.image)),
+                                painter = painterResource(resourcePath = (publicacion.publicacion)),
                                 contentDescription = "Foto"
                             )
                         }
@@ -85,8 +82,7 @@ fun App() {
                     publicaciones.forEach { publicacion ->
                         Row(modifier = Modifier.padding(10.dp)) {
                             Image(
-                                modifier = Modifier.clip(CircleShape),
-                                painter = painterResource(resourcePath = (publicacion.image)),
+                                painter = painterResource(resourcePath = (publicacion.publicacion)),
                                 contentDescription = "Foto"
                             )
                         }
