@@ -96,7 +96,7 @@ fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
         title = "FakeInstagram",
-        state = rememberWindowState(width = 425.dp, height = 300.dp)
+        state = rememberWindowState(width = 800.dp, height = 800.dp)
     ) {
         App()
     }
