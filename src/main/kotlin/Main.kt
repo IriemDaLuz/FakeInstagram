@@ -24,11 +24,53 @@ fun App() {
         }
         Divider()
         //Cuerpo de la app
-        Row {
+        Row { //Publicaciones
+            //Publicacion1
             Column {
+                Text("Publicaciones")//Titulo de la seccion
+                Image()//Foto de la publicacion
+                Row {
+                    Image()//Foto autor
+                    Text()//Nombre autor
+                }
+                Text()//Descripción
+            }
+            //Publicacion2
+            Column {
+                Text("Publicaciones")//Titulo de la seccion
+                Image()//Foto de la publicacion
+                Row {
+                    Image()//Foto autor
+                    Text("")//Nombre autor
+                }
+                Text("")//Descripción
+            }
 
-            }//Publicaciones
-            Column {  }//Sugerencias
+            //Sugerencias
+            Column {
+                Text("Sugerencias")//Titulo de la seccion
+                Text("")//Sugerencias-Personas
+                Box {
+                    //Cada Row es una Persona
+                    Row {
+                        Image()
+                        Text("")
+                    }
+                }
+                Text("")//Sugerencias-Fotos
+                Box {
+                    Row {
+                        Column {
+                            Image()
+                            Image()
+                        }
+                        Column {
+                            Image()
+                            Image()
+                        }
+                    }
+                }
+            }
         }
 
     } //Column cierre llave
