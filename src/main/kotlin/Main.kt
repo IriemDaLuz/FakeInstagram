@@ -71,16 +71,24 @@ fun App() {
                     }
 
                 }
-                Text("")//Sugerencias-Fotos
+                Text("Sugerencias")//Sugerencias-Fotos
                 Box {
-                    Row {
-                        Column {
-                            Image()
-                            Image()
+                    publicaciones.forEach { publicacion ->
+                        Row(modifier = Modifier.padding(10.dp)) {
+                            Image(
+                                modifier = Modifier.clip(CircleShape),
+                                painter = painterResource(resourcePath = (publicacion.image)),
+                                contentDescription = "Foto"
+                            )
                         }
-                        Column {
-                            Image()
-                            Image()
+                    }
+                    publicaciones.forEach { publicacion ->
+                        Row(modifier = Modifier.padding(10.dp)) {
+                            Image(
+                                modifier = Modifier.clip(CircleShape),
+                                painter = painterResource(resourcePath = (publicacion.image)),
+                                contentDescription = "Foto"
+                            )
                         }
                     }
                 }
