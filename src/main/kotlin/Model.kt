@@ -8,12 +8,10 @@ val accounts = listOf<Account>(
 
 data class sugPublicaciones(val image: String)//Sugerencias Fotos
 val sugPublicacion = listOf<sugPublicaciones>(
-    sugPublicaciones("img/publicaciones/publicacion1.jpeg"),
-    sugPublicaciones("img/publicaciones/publicacion2.jpeg"),
-    sugPublicaciones("img/publicaciones/publicacion3.jpeg"),
-    sugPublicaciones("img/publicaciones/publicacion4.jpeg"),
+    sugPublicaciones("img/publicaciones/publicacion6.jpeg"),
     sugPublicaciones("img/publicaciones/publicacion5.jpeg"),
-    sugPublicaciones("img/publicaciones/publicacion6.jpeg")
+    sugPublicaciones("img/publicaciones/publicacion3.jpeg"),
+    sugPublicaciones("img/publicaciones/publicacion4.jpeg")
 )
 
 data class Publicaciones(val name: String,val image: String,val publicacion: String,val descripcion :String)//Publicaciones

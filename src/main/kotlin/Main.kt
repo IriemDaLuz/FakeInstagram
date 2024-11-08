@@ -98,7 +98,7 @@ fun App() {
             Column (modifier=Modifier.weight(2f)){ }//Hacer un hueco entre publicaciones y sugerencias
 
             //Sugerencias
-            Column(modifier = Modifier.weight(5f)){
+            Column(modifier = Modifier.weight(5.5f)){
                 //Titulo de la seccion
                 Text(
                     text="Sugerencias",
@@ -141,19 +141,19 @@ fun App() {
                     modifier = Modifier.padding(top = 10.dp)
                 )
                 Column (modifier = Modifier.padding(top=5.dp).fillMaxSize()){
-                    sugPublicacion.forEach { publicacion ->
-                        Row(modifier = Modifier.padding(10.dp)){
+                    Row{
+                        sugPublicacion.forEach { publicacion ->
                             Image(
-                                modifier=Modifier.size(80.dp),
+                                modifier=Modifier.size(80.dp).padding(10.dp),
                                 painter = painterResource(resourcePath = (publicacion.image)),
                                 contentDescription = "Foto"
                             )
                         }
                     }
-                    sugPublicacion.forEach { publicacion ->
-                        Row(modifier = Modifier.padding(10.dp)){
+                    Row{
+                        sugPublicacion.forEach { publicacion ->
                             Image(
-                                modifier = Modifier.padding(10.dp),
+                                modifier=Modifier.size(80.dp).padding(10.dp),
                                 painter = painterResource(resourcePath = (publicacion.image)),
                                 contentDescription = "Foto"
                             )
