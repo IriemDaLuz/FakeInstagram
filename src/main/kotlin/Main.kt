@@ -164,30 +164,33 @@ fun Personas(){
 }
 
 @Composable
-fun Fotos(){
+fun Fotos() {
     Text(
-        text="Fotos",
+        text = "Fotos",
         fontWeight = FontWeight.Bold,
         fontSize = 14.sp,
         modifier = Modifier.padding(top = 10.dp)
     )
-    Column(modifier = Modifier.padding(18.dp).fillMaxWidth().shadow(1.5.dp)){
-        Row{
-            sugPublicacion.forEach { publicacion ->
-                Image(
-                    modifier=Modifier.size(80.dp).padding(10.dp),
-                    painter = painterResource(resourcePath = (publicacion.image)),
-                    contentDescription = "Foto"
-                )
+
+    Card(elevation = 10.dp, modifier = Modifier.padding(18.dp).fillMaxWidth()) {
+        Column {
+            Row {
+                sugPublicacion.forEach { publicacion ->
+                    Image(
+                        modifier = Modifier.size(80.dp).padding(10.dp),
+                        painter = painterResource(resourcePath = (publicacion.image)),
+                        contentDescription = "Foto"
+                    )
+                }
             }
-        }
-        Row{
-            sugPublicacion.forEach { publicacion ->
-                Image(
-                    modifier=Modifier.size(80.dp).padding(10.dp),
-                    painter = painterResource(resourcePath = (publicacion.image)),
-                    contentDescription = "Foto"
-                )
+            Row {
+                sugPublicacion.forEach { publicacion ->
+                    Image(
+                        modifier = Modifier.size(80.dp).padding(10.dp),
+                        painter = painterResource(resourcePath = (publicacion.image)),
+                        contentDescription = "Foto"
+                    )
+                }
             }
         }
     }
