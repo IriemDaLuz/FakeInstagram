@@ -11,7 +11,7 @@ val sugPublicacion = listOf<sugPublicaciones>(
     sugPublicaciones("img/publicaciones/publicacion6.jpeg"),
     sugPublicaciones("img/publicaciones/publicacion5.jpeg"),
     sugPublicaciones("img/publicaciones/publicacion3.jpeg"),
-    sugPublicaciones("img/publicaciones/publicacion4.jpeg")
+    sugPublicaciones("img/publicaciones/publicacion7.jpeg")
 )
 
 data class Publicaciones(val name: String,val image: String,val publicacion: String,val descripcion :String)//Publicaciones
