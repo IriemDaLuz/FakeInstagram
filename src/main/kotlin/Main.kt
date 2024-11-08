@@ -125,7 +125,13 @@ fun Sugerencias(){
         fontSize = 18.sp
     )
 
-    //Sugerencias-Personas
+    Personas()
+
+    Fotos()
+}
+
+@Composable
+fun Personas(){
     Text(
         text="Personas",
         fontWeight = FontWeight.Bold,
@@ -154,9 +160,11 @@ fun Sugerencias(){
                 }
             }
         }
-    }//Cierre Sugerencias-Personas
+    }
+}
 
-    //sugerencias-Fotos
+@Composable
+fun Fotos(){
     Text(
         text="Fotos",
         fontWeight = FontWeight.Bold,
@@ -182,10 +190,8 @@ fun Sugerencias(){
                 )
             }
         }
-    }//Cierre Sugerencias-Fotos
+    }
 }
-
-
 fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
