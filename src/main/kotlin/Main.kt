@@ -132,14 +132,14 @@ fun Sugerencias(){
 
 @Composable
 fun Personas(){
-    Text(
-        text="Personas",
-        fontWeight = FontWeight.Bold,
-        fontSize = 14.sp,
-        modifier = Modifier.padding(top = 10.dp)
-    )
     Card(elevation=10.dp, modifier = Modifier.padding(18.dp).fillMaxWidth()){
-        Column {
+        Text(
+            text="Personas",
+            fontWeight = FontWeight.Bold,
+            fontSize = 14.sp,
+            modifier = Modifier.padding(10.dp)
+        )
+        Column(modifier = Modifier.padding(20.dp, top = 25.dp)) {
             //Cada Row es una Persona
             accounts.forEach { account ->
                 Row(modifier = Modifier.padding(10.dp)) {
@@ -165,15 +165,15 @@ fun Personas(){
 
 @Composable
 fun Fotos() {
-    Text(
-        text = "Fotos",
-        fontWeight = FontWeight.Bold,
-        fontSize = 14.sp,
-        modifier = Modifier.padding(top = 10.dp)
-    )
 
     Card(elevation = 10.dp, modifier = Modifier.padding(18.dp).fillMaxWidth()) {
-        Column {
+        Text(
+            text = "Fotos",
+            fontWeight = FontWeight.Bold,
+            fontSize = 14.sp,
+            modifier = Modifier.padding(10.dp)
+        )
+        Column(modifier = Modifier.padding(20.dp, top = 25.dp)) {
             Row {
                 sugPublicacion.forEach { publicacion ->
                     Image(
