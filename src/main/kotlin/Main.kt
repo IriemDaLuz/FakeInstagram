@@ -46,7 +46,8 @@ fun App() {
                         )
                         Text(
                             account.name,
-                            fontSize = 10.sp
+                            fontSize = 10.sp,
+                            modifier = Modifier.padding(18.dp, top = 0.dp)
                         )
                     }
                 }
@@ -123,10 +124,18 @@ fun App() {
                                 contentDescription = "Foto",
                             )
                             Column(modifier = Modifier.padding(start = 10.dp)) {
-                                Text(account.name,
-                                    fontSize = 14.sp,
-                                    modifier = Modifier.padding(10.dp,top = 25.dp, bottom = 0.dp))
-
+                                Row {
+                                    Text(
+                                        account.name,
+                                        fontSize = 14.sp,
+                                        modifier = Modifier.padding(10.dp, top = 25.dp, bottom = 0.dp)
+                                    )
+                                    Text(
+                                        account.apellido,
+                                        fontSize = 14.sp,
+                                        modifier = Modifier.padding(10.dp, top = 25.dp, bottom = 0.dp)
+                                    )
+                                }
                             }
                         }
                     }
