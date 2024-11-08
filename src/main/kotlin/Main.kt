@@ -1,5 +1,8 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -8,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -24,7 +28,7 @@ fun App() {
 
         Divider(modifier = Modifier.padding(top = 10.dp, bottom = 5.dp))
 
-        Column(modifier = Modifier.padding(25.dp,bottom=10.dp)) { Historias() }
+        Column(modifier = Modifier.padding(25.dp,bottom=10.dp).fillMaxWidth()) { Historias() }
 
         Divider(modifier = Modifier.padding(top = 5.dp, bottom = 8.dp))
 
@@ -47,6 +51,7 @@ fun Titulo(){
         text = "FakeInstagram",
         fontWeight = FontWeight.Bold,
         fontSize = 24.sp,
+        color = Color.Red,
         modifier=Modifier.fillMaxWidth()
     )
 }
@@ -59,15 +64,14 @@ fun Historias(){
         fontSize = 14.sp,
         modifier = Modifier.padding(top = 10.dp)
     )
-    Row(
-        horizontalArrangement = Arrangement.Start) {
+    Row(horizontalArrangement = Arrangement.Start)  {
         accounts.forEach { account ->
-            Column(modifier = Modifier.padding(20.dp,top=10.dp)) {
+            Column(modifier = Modifier.padding(20.dp,top=10.dp)){
                 Image(
-                    modifier = Modifier.clip(CircleShape).size(70.dp),
+                    modifier = Modifier.clip(CircleShape).size(70.dp).border(color = Color.Red, width = 1.1.dp, shape = CircleShape),
                     painter = painterResource(resourcePath = (account.image)),
-                    contentDescription = "Foto"
-                )
+                    contentDescription = "Foto",
+                                    )
                 Text(
                     account.name,
                     fontSize = 10.sp,
