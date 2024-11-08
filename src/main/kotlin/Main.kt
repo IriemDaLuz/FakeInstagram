@@ -25,7 +25,8 @@ fun App() {
             modifier=Modifier.fillMaxWidth()
         )
 
-        Divider(modifier = Modifier.padding(top = 10.dp, bottom = 10.dp))
+        Divider(modifier = Modifier.padding(top = 10.dp, bottom = 5.dp))
+
         //Historias
         Column(modifier = Modifier.padding(25.dp,bottom=10.dp)) {
             Text(
@@ -37,47 +38,62 @@ fun App() {
             Row(
                 horizontalArrangement = Arrangement.Start) {
                 accounts.forEach { account ->
-                    Column(modifier = Modifier.padding(15.dp)) {
+                    Column(modifier = Modifier.padding(20.dp,top=10.dp)) {
                         Image(
                             modifier = Modifier.clip(CircleShape).size(70.dp),
                             painter = painterResource(resourcePath = (account.image)),
                             contentDescription = "Foto"
                         )
+                        Text(
+                            account.name,
+                            fontSize = 10.sp
+                        )
                     }
                 }
             }
-        }
-        Divider(modifier = Modifier.padding(top = 10.dp, bottom = 5.dp))
+        }//Cierre Historias
+
+        Divider(modifier = Modifier.padding(top = 5.dp, bottom = 8.dp))
+
         //Cuerpo de la app
-        Row(modifier = Modifier.fillMaxHeight().padding(25.dp,bottom=10.dp)) {
+        Row(modifier = Modifier.fillMaxHeight().padding(20.dp,bottom=10.dp)) {
             //Publicaciones
             Column(modifier = Modifier.weight(3f)) {
                 Text(
                     "Publicaciones",
-                    fontWeight = FontWeight.Bold, fontSize = 18.sp
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp,
+                    modifier = Modifier.padding(bottom = 0.dp)
                 )
                 publicaciones.forEach { publicacion ->
-                    Image(
-                        modifier = Modifier.fillMaxWidth().size(240.dp),
-                        painter = painterResource(resourcePath = (publicacion.publicacion)),
-                        contentDescription = "Foto"
-                    )
-                    Row(modifier = Modifier.padding(top = 5.dp)){
+                    Column(modifier = Modifier.padding(bottom = 5.dp)) {
                         Image(
-                            modifier = Modifier.clip(CircleShape).size(60.dp),
-                            painter = painterResource(resourcePath = (publicacion.image)),
+                            modifier = Modifier.fillMaxWidth().size(180.dp),
+                            painter = painterResource(resourcePath = (publicacion.publicacion)),
                             contentDescription = "Foto"
                         )
+                        Row(modifier = Modifier.padding(top = 0.dp)) {
+                            Image(
+                                modifier = Modifier.clip(CircleShape).size(45.dp),
+                                painter = painterResource(resourcePath = (publicacion.image)),
+                                contentDescription = "Foto"
+                            )
 
-                        Text(publicacion.name,
-                            fontSize = 16.sp,
-                            modifier = Modifier.padding(20.dp,top = 20.dp, bottom = 0.dp))
+                            Text(
+                                publicacion.name,
+                                fontSize = 12.sp,
+                                modifier = Modifier.padding(20.dp, top = 20.dp, bottom = 0.dp)
+                            )
+                        }
+                        Text(
+                            publicacion.descripcion,
+                            fontSize = 12.sp,
+                            modifier = Modifier.padding(bottom = 20.dp)
+                        )
                     }
-                    Text(publicacion.descripcion,
-                        fontSize = 12.sp,
-                        modifier = Modifier.padding(bottom = 20.dp))
                 }
-            }
+
+            }//Cierre Publicaciones
 
             Column (modifier=Modifier.weight(2f)){ }//Hacer un hueco entre publicaciones y sugerencias
 
@@ -102,20 +118,21 @@ fun App() {
                     accounts.forEach { account ->
                         Row(modifier = Modifier.padding(10.dp)) {
                             Image(
-                                modifier=Modifier.clip(CircleShape).size(80.dp),
+                                modifier=Modifier.clip(CircleShape).size(55.dp),
                                 painter = painterResource(resourcePath = (account.image)),
                                 contentDescription = "Foto",
                             )
                             Column(modifier = Modifier.padding(start = 10.dp)) {
                                 Text(account.name,
-                                    fontSize = 16.sp,
+                                    fontSize = 14.sp,
                                     modifier = Modifier.padding(10.dp,top = 25.dp, bottom = 0.dp))
 
                             }
                         }
                     }
 
-                }
+                }//Cierre Sugerencias-Personas
+
                 //sugerencias-Fotos
                 Text(
                     text="Fotos",
@@ -125,7 +142,7 @@ fun App() {
                 )
                 Column (modifier = Modifier.padding(top=5.dp).fillMaxSize()){
                     sugPublicacion.forEach { publicacion ->
-                        Column(modifier = Modifier.padding(10.dp)){
+                        Row(modifier = Modifier.padding(10.dp)){
                             Image(
                                 modifier=Modifier.size(80.dp),
                                 painter = painterResource(resourcePath = (publicacion.image)),
@@ -134,7 +151,7 @@ fun App() {
                         }
                     }
                     sugPublicacion.forEach { publicacion ->
-                        Column(modifier = Modifier.padding(10.dp)){
+                        Row(modifier = Modifier.padding(10.dp)){
                             Image(
                                 modifier = Modifier.padding(10.dp),
                                 painter = painterResource(resourcePath = (publicacion.image)),
@@ -142,11 +159,14 @@ fun App() {
                             )
                         }
                     }
-                }
-            }
-        }
+                }//Cierre Sugerencias-Fotos
+
+            }//Cierre Sugerencias
+
+        }//Cierre cuerpo de la app
 
     } //Column cierre llave
+
 } //Cierre llave App
 
 fun main() = application {
