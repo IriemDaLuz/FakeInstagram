@@ -6,6 +6,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -114,7 +115,7 @@ fun App() {
                     fontSize = 14.sp,
                     modifier = Modifier.padding(top = 10.dp)
                 )
-                Column(modifier = Modifier.padding(10.dp)) {
+                Column(modifier = Modifier.padding(18.dp).fillMaxWidth().shadow(1.5.dp)) {
                     //Cada Row es una Persona
                     accounts.forEach { account ->
                         Row(modifier = Modifier.padding(10.dp)) {
@@ -149,7 +150,7 @@ fun App() {
                     fontSize = 14.sp,
                     modifier = Modifier.padding(top = 10.dp)
                 )
-                Column (modifier = Modifier.padding(top=5.dp).fillMaxSize()){
+                Column(modifier = Modifier.padding(18.dp).fillMaxWidth().shadow(1.5.dp)){
                     Row{
                         sugPublicacion.forEach { publicacion ->
                             Image(
