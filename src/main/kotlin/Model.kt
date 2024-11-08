@@ -1,9 +1,9 @@
 
-data class Account(val name : String, val image: String)//Cuentas
+data class Account(val name : String,val appelido : String, val image: String)//Cuentas
 val accounts = listOf<Account>(
-    Account("Unay Porez","img/accounts/img2.jpeg"),
-    Account("Fornondo Mentelongo","img/accounts/img1.jpeg"),
-    Account("Pabio Raton","img/accounts/img3.jpeg")
+    Account("Unay","Porez","img/accounts/img2.jpeg"),
+    Account("Fornondo","Mentelongo","img/accounts/img1.jpeg"),
+    Account("Pabio","Raton","img/accounts/img3.jpeg")
 )
 
 data class sugPublicaciones(val image: String)//Sugerencias Fotos
