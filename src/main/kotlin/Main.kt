@@ -199,6 +199,7 @@ fun Fotos() {
         }
     }
 }
+
 fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
