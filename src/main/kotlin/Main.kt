@@ -1,16 +1,12 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -19,6 +15,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
+
 
 @Preview
 @Composable
@@ -51,7 +48,7 @@ fun Titulo(){
         text = "FakeInstagram",
         fontWeight = FontWeight.Bold,
         fontSize = 24.sp,
-        color = Color.Red,
+        color = Color( 0xffad1457),
         modifier=Modifier.fillMaxWidth()
     )
 }
@@ -68,7 +65,7 @@ fun Historias(){
         accounts.forEach { account ->
             Column(modifier = Modifier.padding(20.dp,top=10.dp)){
                 Image(
-                    modifier = Modifier.clip(CircleShape).size(70.dp).border(color = Color.Red, width = 1.1.dp, shape = CircleShape),
+                    modifier = Modifier.clip(CircleShape).size(70.dp).border(color = Color( 0xffad1457), width = 1.1.dp, shape = CircleShape),
                     painter = painterResource(resourcePath = (account.image)),
                     contentDescription = "Foto",
                                     )
@@ -145,7 +142,7 @@ fun Personas(){
         )
         Column(modifier = Modifier.padding(20.dp, top = 25.dp)) {
             //Cada Row es una Persona
-            accounts.forEach { account ->
+            accounts2.forEach { account ->
                 Row(modifier = Modifier.padding(10.dp)) {
                     Image(
                         modifier=Modifier.clip(CircleShape).size(55.dp),
@@ -161,7 +158,9 @@ fun Personas(){
                             )
                         }
                     }
+
                 }
+                Divider(modifier = Modifier.padding(5.dp))
             }
         }
     }
@@ -188,7 +187,7 @@ fun Fotos() {
                 }
             }
             Row {
-                sugPublicacion.forEach { publicacion ->
+                sugPublicacion2.forEach { publicacion ->
                     Image(
                         modifier = Modifier.size(80.dp).padding(10.dp),
                         painter = painterResource(resourcePath = (publicacion.image)),
